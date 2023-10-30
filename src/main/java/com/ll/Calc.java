@@ -2,10 +2,16 @@ package com.ll;
 
 public class Calc {
 
-    static int run (String number){
+    static int run (String exp) {
+        if (exp.isBlank()) return 0;
 
+        if (exp.contains("-")) return 0;
 
+        String[] exps = exp.split(" \\+ ");
 
-        return 20;
+        int num1 = Integer.parseInt(exps[0]);
+        int num2 = Integer.parseInt(exps[1]);
+
+        return num1 + num2;
     }
 }
